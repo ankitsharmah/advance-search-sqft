@@ -656,6 +656,9 @@ export const PropertySearchSuggestions = () => {
           // Replace with your actual API endpoint
           const response = await axios.get(`https://api.propertydekho247.com/post/allpost?LocationDetails.ProjectName=${selectedFilters?.projectName}&BasicDetails.PropertyAdType=Rent&PropertyDetails.BHKType=&BasicDetails.ApartmentType=${selectedFilters.apartmentType ===undefined ? "":selectedFilters.apartmentType}&BasicDetails.PropertyStatus=&AmenitiesDetails.Furnishing=`);
          
+          if(response.data.success){
+            alert("data is fetched success fully");
+          }
           console.log(response)
         } catch (error) {
           console.error('Error fetching property data:', error);
